@@ -547,7 +547,7 @@ public class CompleteS3MultipartUpload extends AbstractS3Processor {
 
     protected List<PartETag> getPartETags(final ProcessSession session, final FlowFile flowFile, final RecordReaderFactory readerFactory) throws ProcessException {
         
-        String count = flowFile.getAttribute(FRAGMENT_COUNT_ATTRIBUTE);
+        String count = flowFile.getAttribute(RECORD_COUNT_ATTRIBUTE);
         int size = Integer.parseInt(count);
 
         final List<PartETag> partETags = new ArrayList<>(size);
