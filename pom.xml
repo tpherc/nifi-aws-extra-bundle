@@ -16,6 +16,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>au.com.chribro</groupId>
+    <artifactId>nifi-aws-extra-bundle</artifactId>
+    <version>2.5.0</version>
+    <packaging>pom</packaging>
+
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-standard-shared-bom</artifactId>
@@ -23,22 +28,13 @@
         <relativePath>../nifi-standard-shared-bundle/nifi-standard-shared-bom</relativePath>
     </parent>
 
-    <artifactId>nifi-aws-bundle</artifactId>
-    <packaging>pom</packaging>
-
     <properties>
         <aws-kinesis-client-library-version>2.7.1</aws-kinesis-client-library-version>
     </properties>
 
     <modules>
-        <module>nifi-aws-processors</module>
-        <module>nifi-aws-nar</module>
-        <module>nifi-aws-service-api</module>
-        <module>nifi-aws-service-api-nar</module>
-        <module>nifi-aws-abstract-processors</module>
-        <module>nifi-aws-parameter-value-providers</module>
-        <module>nifi-aws-parameter-providers</module>
-        <module>nifi-aws-schema-registry-service</module>
+        <module>nifi-aws-extra-processors</module>
+        <module>nifi-aws-extra-nar</module>
     </modules>
 
     <dependencyManagement>
