@@ -519,12 +519,12 @@ public class UploadS3Part extends AbstractS3Processor {
                         .withPartNumber(part)
                         .withPartSize(thisPartSize);
 
-                if (md5Digest != null) {
+                if (md5Digest != null && !md5Digest.isEmpty()) {
                     // convert hex -> bytes
                     byte[] md5Bytes = DatatypeConverter.parseHexBinary(flowFile.getAttribute("content_MD5"));
                     // encode bytes to base64
                     String md5Base64 = Base64.getEncoder().encodeToString(md5Bytes);
-                    uploadRequest.withMD5Digest(md5Base64);
+                    uploadRequest = uploadRequest.withMD5Digest(md5Base64);
                 }
 
                 if (encryptionService != null) {
